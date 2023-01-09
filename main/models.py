@@ -16,7 +16,7 @@ class Election(models.Model):
 
 
 class HouSyuanRen(models.Model):
-
+    #  candidate
     # 這個候選人屬於哪一場選舉
     election_id = models.IntegerField()
 
@@ -41,6 +41,9 @@ class HouSyuanRen(models.Model):
 
     # 候選人政見
     politics = models.TextField('政見', max_length=10000)
+
+    # 當前得票
+    poll = models.IntegerField(default=0)
 
 
 

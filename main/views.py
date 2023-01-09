@@ -21,6 +21,9 @@ class CreateElection(LoginRequiredMixin, CreateView):
 class DeleteElection(LoginRequiredMixin, DeleteView):
     model = Election
 
+    def get_redirect_url(self, *args, **kwargs):
+        return ''
+
 
 # 列出單一選舉的所有候選人
 class DetailElection(DetailView):
@@ -43,7 +46,19 @@ class RunElection(CreateView):
     fields = ['first_name', 'name', 'birth', 
     'gender', 'party', 'academy', 'seniority', 'politics']
 
+    def get_redirect_url(self, *args, **kwargs):
+        return ''
+
 
 # 退選
 class WithdrawElection(DeleteView):
     model = HouSyuanRen
+
+    def get_redirect_url(self, *args, **kwargs):
+        return ''
+
+
+# 投票
+class Vote(RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        return ''
