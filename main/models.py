@@ -14,6 +14,9 @@ class Election(models.Model):
     # 選舉開始時間
     date_start = models.DateField('投票開始時間')
 
+    def __str__(self):
+        return self.name + "/n" + self.date_created
+
 
 class HouSyuanRen(models.Model):
     #  candidate
@@ -44,6 +47,9 @@ class HouSyuanRen(models.Model):
 
     # 當前得票
     poll = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.first_name + ' ' + self.name + ' 性別：' + self.gender
 
 
 

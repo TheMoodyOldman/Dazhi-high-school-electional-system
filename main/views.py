@@ -14,7 +14,7 @@ class ListElections(ListView):
 class CreateElection(LoginRequiredMixin, CreateView):
     model = Election
     fields = ['name', 'content', 'date_start']
-    success_url = ''
+    success_url = '../'
 
 
 # 刪除選舉
@@ -22,7 +22,7 @@ class DeleteElection(LoginRequiredMixin, DeleteView):
     model = Election
 
     def get_redirect_url(self, *args, **kwargs):
-        return ''
+        return '../../'
 
 
 # 列出單一選舉的所有候選人
@@ -47,18 +47,24 @@ class RunElection(CreateView):
     'gender', 'party', 'academy', 'seniority', 'politics']
 
     def get_redirect_url(self, *args, **kwargs):
-        return ''
+        return "../candidate" + self.id + "/"
+
+
+# 編輯選舉公報
+class EditElectionBulletin(LoginRequiredMixin, UpdateView):
+    model = HouSyuanRen
+    fields = ['first_name', 'name', 'birth', 
+    'gender', 'party', 'academy', 'seniority', 'politics']
+    success_url = "../"
 
 
 # 退選
-class WithdrawElection(DeleteView):
+class WithdrawElection(LoginRequiredMixin, DeleteView):
     model = HouSyuanRen
-
-    def get_redirect_url(self, *args, **kwargs):
-        return ''
+    success_url = "../../"
 
 
 # 投票
-class Vote(RedirectView):
+class Vote(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return ''
+        return '../'
