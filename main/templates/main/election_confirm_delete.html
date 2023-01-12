@@ -1,0 +1,11 @@
+{% extends '../base.html' %}
+
+{% block title %}確認刪除該選舉？{% endblock title %}
+
+{% block content %}
+<p>確認刪除選舉「{{ object }}」？</p>
+<form accept="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="刪除">
+</form>
+{% endblock %}

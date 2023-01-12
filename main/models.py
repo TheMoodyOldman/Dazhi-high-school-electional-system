@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Election(models.Model):
     # 選舉名稱
-    name = models.CharField('投票名稱', max_length=50)
+    name = models.CharField('選舉名稱', max_length=50)
 
     # 簡述選舉內容
     content = models.CharField('內容概述', max_length=200)
@@ -12,10 +12,11 @@ class Election(models.Model):
     date_created = models.DateField('建立時間', auto_now_add=True)
 
     # 選舉開始時間
-    date_start = models.DateField('投票開始時間')
+    date_start = models.DateField('投票開始時間', auto_now_add=True)
+    # date_start = models.DateField('投票開始時間')
 
     def __str__(self):
-        return self.name + "/n" + self.date_created
+        return self.name + " | " + str(self.date_created)
 
 
 class HouSyuanRen(models.Model):
@@ -28,7 +29,7 @@ class HouSyuanRen(models.Model):
     name = models.CharField('名稱', max_length=12)
 
     # 候選人出生年月日
-    birth = models.DateField('出生年月日')
+    birth = models.DateField('出生年月日', max_length=10)
 
     # 候選人性別
     gender = models.CharField('性別', max_length=5)
@@ -44,9 +45,12 @@ class HouSyuanRen(models.Model):
 
     # 候選人政見
     politics = models.TextField('政見', max_length=10000)
-
+    
     # 當前得票
     poll = models.IntegerField(default=0)
+
+    # 有誰投票
+    polled = []
 
     def __str__(self):
         return self.first_name + ' ' + self.name + ' 性別：' + self.gender

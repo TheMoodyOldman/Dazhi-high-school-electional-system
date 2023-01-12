@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}當前選舉列表{% endblock title %}
+
+{% block top_link %}create/{% endblock %}
+{% block top_message %}建立新選舉{% endblock %}
+
+{% block content %}
+<h3>當前選舉列表</h3>
+
+<ul>
+    {% for election in election_list %}
+    <li>{{ election }}<br><a href="ele{{ election.id }}/">查看詳細內容</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}

@@ -13,7 +13,8 @@ class ListElections(ListView):
 # 創建選舉
 class CreateElection(LoginRequiredMixin, CreateView):
     model = Election
-    fields = ['name', 'content', 'date_start']
+    fields = ['name', 'content']
+    # fields = ['name', 'content', 'date_start'] 日期不知道怎麼處理，先放著
     success_url = '../'
 
 

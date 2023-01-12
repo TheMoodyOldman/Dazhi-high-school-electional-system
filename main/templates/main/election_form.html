@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}建立新選舉{% endblock title %}
+
+{% block top_link %}../{% endblock %}
+{% block top_message %}回首頁{% endblock %}
+
+{% block content %}
+<h3>創建新選舉</h3>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input value="確認送出" type="submit">
+</form>
+
+{% endblock content %}
