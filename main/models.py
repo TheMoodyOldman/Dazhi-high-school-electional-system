@@ -12,7 +12,7 @@ class Election(models.Model):
     date_created = models.DateField('建立時間', auto_now_add=True)
 
     # 選舉開始時間
-    date_start = models.DateField('投票開始時間', auto_now_add=True)
+    date_start = models.DateField('投票開始時間')
     # date_start = models.DateField('投票開始時間')
 
     def __str__(self):
@@ -45,6 +45,9 @@ class HouSyuanRen(models.Model):
 
     # 候選人政見
     politics = models.TextField('政見', max_length=10000)
+
+    # 候選人照片
+    pic = models.ImageField('照片', blank=True, null=True)
     
     # 當前得票
     poll = models.IntegerField(default=0)

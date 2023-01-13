@@ -1,14 +1,14 @@
 {% extends '../base.html' %}
 
-{% block title %}確認刪除該選舉？{% endblock title %}
+{% block title %}退選確認{% endblock title %}
 
 {% block top_link %}../{% endblock %}
 {% block top_message %}回前頁{% endblock %}
 
 {% block content %}
-<p>確認刪除選舉「{{ object }}」？</p>
+<p>{{ object.first_name }} {{ object.name}} 先生/女士，確認要退選嗎？</p>
 <form accept="" method="post">
     {% csrf_token %}
-    <input type="submit" value="刪除">
+    <input type="submit" value="確認">
 </form>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}查看選舉公報{% endblock title %}
+
+{% block top_link %}../{% endblock %}
+{% block top_message %}回前頁{% endblock %}
+
+{% block content %}
+
+<h5><a href="withdraw/">退選</a> | <a href="edit/">編輯選舉公報</a></h5>
+
+<h4>{{ object }}</h4><br>
+
+<table border="2px">
+    <tr>
+        <td></td><td>姓名</td><td>出生年月日</td><td>性別</td>
+        <td>黨籍</td><td>學歷</td><td>資歷</td><td>政見</td>
+    </tr>
+
+    <tr>
+        <td><img src='{{ object.pic.url }}'></td>
+        <td><p>{{ object.first_name }} {{ object.name }}</p></td>
+        <td><p>{{ object.birth }}</p></td>
+        <td><p>{{ object.gender }}</p></td>
+        <td><p>{{ object.party }}</p></td>
+        <td><p>{{ object.academy }}</p></td>
+        <td><p>{{ object.seniority }}</p></td>
+        <td><p>{{ object.politics }}</p></td>
+    </tr>
+</table>
+
+{% endblock content %}

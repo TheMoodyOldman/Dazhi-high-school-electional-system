@@ -10,7 +10,9 @@
 
 <ul>
     {% for election in election_list %}
-    <li>{{ election }}<br><a href="ele{{ election.id }}/">查看詳細內容</a></li>
+    <li>{{ election }}<br>
+        <p>{{ election.content }}<br>
+        <a href="ele{{ election.id }}/">查看詳細內容</a></p></li>
     {% endfor %}
 </ul>
 

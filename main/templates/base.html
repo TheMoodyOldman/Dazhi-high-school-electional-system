@@ -11,7 +11,9 @@
     <div class="container">
         <h1>大直高中公民選舉系統</h1>
         {% if user.is_authenticated %}
-        <p>歡迎！ {{ user.username }}</p>
+        <p>歡迎！ {{ user.username }}
+          <a href="{% url 'logout' %}" class="btn btn-outline-primary">登出</a>
+        </p>
         {% else %}
         <p><a href="{% url 'login' %}" class="btn btn-outline-primary">登入</a></p>
         {% endif %}
