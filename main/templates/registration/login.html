@@ -2,6 +2,9 @@
 
 {% block title %}登入{% endblock %}
 
+{% block top_link %}{% url 'mainpage' %}{% endblock %}
+{% block top_message %}回首頁{% endblock %}
+
 {% block content %}
 <form action="" method="post">
   {% csrf_token %}

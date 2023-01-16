@@ -12,7 +12,7 @@
     {% for election in election_list %}
     <li>{{ election }}<br>
         <p>{{ election.content }}<br>
-        <a href="ele{{ election.id }}/">查看詳細內容</a></p></li>
+        <a href="ele{{ election.id }}/" class="btn btn-outline-primary">查看詳細內容</a></p></li>
     {% endfor %}
 </ul>
 

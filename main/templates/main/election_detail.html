@@ -5,16 +5,21 @@
 {% block top_link %}../{% endblock %}
 {% block top_message %}回首頁{% endblock %}
 
+{% block extra_message %}
+  <h5><a href="delete/"  class="btn btn-primary">刪除此選舉</a>
+    - <a href="run/" class="btn btn-primary">參選</a></h5>
+{% endblock %}
+
 {% block content %}
 
-<h5><a href="delete/">刪除此選舉</a> | <a href="run/">參選</a></h5>
-
 <h4>{{ object }}建立</h4><br>
-<p>{{ object.content }}</p><br>
+<p>{{ object.content|linebreaks }}</p><br>
 <h5>候選人<h5>
 <ul>
 {% for candidate in HouSyuanRen %}
-  <li>{{ candidate }}<br><a href="candidate{{ candidate.id }}/">查看選舉公報</a></li>
+  <li>{{ candidate }}<br>
+    <a href="candidate{{ candidate.id }}/"  class="btn btn-outline-primary">
+      查看選舉公報</a></li>
 {% endfor %}
 </ul>
 

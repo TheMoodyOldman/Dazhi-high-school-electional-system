@@ -5,9 +5,12 @@
 {% block top_link %}../{% endblock %}
 {% block top_message %}回前頁{% endblock %}
 
-{% block content %}
+{% block extra_message %}
+    <h5><a href="withdraw/"  class="btn btn-primary">退選</a>
+        - <a href="edit/" class="btn btn-primary">編輯選舉公報</a></h5>
+{% endblock extra_message %}
 
-<h5><a href="withdraw/">退選</a> | <a href="edit/">編輯選舉公報</a></h5>
+{% block content %}
 
 <h4>{{ object }}</h4><br>
 
@@ -23,9 +26,9 @@
         <td><p>{{ object.birth }}</p></td>
         <td><p>{{ object.gender }}</p></td>
         <td><p>{{ object.party }}</p></td>
-        <td><p>{{ object.academy }}</p></td>
-        <td><p>{{ object.seniority }}</p></td>
-        <td><p>{{ object.politics }}</p></td>
+        <td><p>{{ object.academy|linebreaks }}</p></td>
+        <td><p>{{ object.seniority|linebreaks }}</p></td>
+        <td><p>{{ object.politics|linebreaks }}</p></td>
     </tr>
 </table>
 

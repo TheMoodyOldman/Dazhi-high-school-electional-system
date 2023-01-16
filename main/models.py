@@ -6,7 +6,7 @@ class Election(models.Model):
     name = models.CharField('選舉名稱', max_length=50)
 
     # 簡述選舉內容
-    content = models.CharField('內容概述', max_length=200)
+    content = models.TextField('內容概述', max_length=200)
 
     # 選舉建立時間
     date_created = models.DateField('建立時間', auto_now_add=True)
@@ -38,10 +38,10 @@ class HouSyuanRen(models.Model):
     party = models.CharField('黨籍', max_length=20)
 
     # 候選人學歷
-    academy = models.TextField('學歷', max_length=100)
+    academy = models.TextField('學歷', max_length=200)
 
     # 候選人資歷
-    seniority = models.TextField('資歷', max_length=150)
+    seniority = models.TextField('資歷', max_length=10000)
 
     # 候選人政見
     politics = models.TextField('政見', max_length=10000)
