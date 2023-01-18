@@ -14,12 +14,14 @@
 
 <h4>{{ object }}建立</h4><br>
 <p>{{ object.content|linebreaks }}</p><br>
-<h5>候選人<h5>
+<h3>候選人<h3>
 <ul>
 {% for candidate in HouSyuanRen %}
-  <li>{{ candidate }}<br>
+  <li><h5>{{ candidate }}<br>
     <a href="candidate{{ candidate.id }}/"  class="btn btn-outline-primary">
-      查看選舉公報</a></li>
+      查看選舉公報</a></h5></li>
+{% empty %}
+  <h5>當前無候選人</h5>
 {% endfor %}
 </ul>
 

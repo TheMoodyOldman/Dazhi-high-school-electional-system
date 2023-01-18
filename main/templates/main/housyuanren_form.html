@@ -8,10 +8,10 @@
 {% block content %}
 <h3>選舉公報</h3>
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input value="確認送出" type="submit">
+    <input value="確認送出" type="submit" class="btn btn-outline-success">
 </form>
 
 {% endblock content %}

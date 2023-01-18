@@ -9,6 +9,6 @@
 <p>確認刪除選舉「{{ object }}」？</p>
 <form accept="" method="post">
     {% csrf_token %}
-    <input type="submit" value="刪除">
+    <input type="submit" value="刪除" class="btn btn-outline-danger">
 </form>
 {% endblock %}

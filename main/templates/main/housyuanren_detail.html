@@ -12,12 +12,19 @@
 
 {% block content %}
 
+
 <h4>{{ object }}</h4><br>
 
-<table border="2px">
+<table border="2px" style="width: 100%;">
     <tr>
-        <td></td><td>姓名</td><td>出生年月日</td><td>性別</td>
-        <td>黨籍</td><td>學歷</td><td>資歷</td><td>政見</td>
+        <style>
+            .main{
+                font-size: 25px;
+            }
+        </style>
+
+        <td></td><td class="main">姓名</td><td class="main">出生年月日</td><td class="main">性別</td>
+        <td class="main">黨籍</td><td class="main">學歷</td><td class="main">資歷</td><td class="main">政見</td>
     </tr>
 
     <tr>

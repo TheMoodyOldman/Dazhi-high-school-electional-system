@@ -11,7 +11,7 @@
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input value="確認送出" type="submit">
+    <input value="確認送出" type="submit" class="btn btn-outline-success">
 </form>
 
 {% endblock content %}
